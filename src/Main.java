@@ -1,24 +1,24 @@
 public class Main {
     public static void main(String[] args) {
 
-        MyLinkedList list = new MyLinkedList();
+        MyArrayList list = new MyArrayList();
 
         list.add(22);
         list.add(44);
         list.add(66);
         list.add(22);
 
-        System.out.println(list);
+        for (int i = 0; i < list.getSize(); i++) System.out.print(list.get(i) + " ");
+        System.out.println();
+        System.out.println(list.getSize());
 
-        list.add(2L, 44444);
+        list.delete(3);
 
-        System.out.println(list);
-
-        list.delete(2L);
-
-        System.out.println(list);
-
-        System.out.println(list.get(2L));
+        for (int i = 0; i < list.getSize(); i++) System.out.print(list.get(i) + " ");
+        System.out.println();
+        System.out.println(list.getSize());
+        System.out.println();
+        System.out.println(list.get(2));
 
     }
 }

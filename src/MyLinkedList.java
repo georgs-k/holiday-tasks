@@ -35,6 +35,10 @@ public class MyLinkedList {
     private ListElement firstElement;
     private ListElement lastElement;
 
+    public long getSize() {
+        return size;
+    }
+
     public void add(int value) {
         ListElement newElement = new ListElement();
         newElement.setValue(value);
