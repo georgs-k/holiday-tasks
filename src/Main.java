@@ -1,24 +1,9 @@
 public class Main {
     public static void main(String[] args) {
-
-        MyArrayList list = new MyArrayList();
-
-        list.add(22);
-        list.add(44);
-        list.add(66);
-        list.add(22);
-
-        for (int i = 0; i < list.getSize(); i++) System.out.print(list.get(i) + " ");
+        int[] myArray = {10, 23, 409, 1, 45, 23, 2342, 4564, 7657, 1231, 1, 4, 35, 543};
+        for (int i = 0; i < myArray.length; i++) System.out.print(myArray[i] + " ");
         System.out.println();
-        System.out.println(list.getSize());
-
-        list.delete(3);
-
-        for (int i = 0; i < list.getSize(); i++) System.out.print(list.get(i) + " ");
-        System.out.println();
-        System.out.println(list.getSize());
-        System.out.println();
-        System.out.println(list.get(2));
-
+        MyBubbleSort.sort(myArray);
+        for (int i = 0; i < myArray.length; i++) System.out.print(myArray[i] + " ");
     }
 }

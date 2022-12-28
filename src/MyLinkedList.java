@@ -39,6 +39,7 @@ public class MyLinkedList {
         return size;
     }
 
+    // O(1)
     public void add(int value) {
         ListElement newElement = new ListElement();
         newElement.setValue(value);
@@ -50,6 +51,7 @@ public class MyLinkedList {
         lastElement = newElement;
     }
 
+    // O(n)
     public void add(long index, int value) throws IndexOutOfBoundsException {
         if (index > size || index < 0) throw new IndexOutOfBoundsException();
         if (index == size) {
@@ -80,6 +82,7 @@ public class MyLinkedList {
         traverseElement.setNextElement(newElement);
     }
 
+    // O(n)
     public void delete(long index) throws IndexOutOfBoundsException {
         if (index > size - 1 || index < 0) throw new IndexOutOfBoundsException();
         if (size == 1) {
@@ -111,6 +114,7 @@ public class MyLinkedList {
         traverseElement.getPreviousElement().setNextElement(traverseElement.getNextElement());
     }
 
+    // O(n)
     public int get(long index) throws IndexOutOfBoundsException {
         if (index > size - 1 || index < 0) throw new IndexOutOfBoundsException();
         if (index == 0) return firstElement.getValue();

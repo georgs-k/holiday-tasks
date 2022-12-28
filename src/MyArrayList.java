@@ -5,7 +5,7 @@ public class MyArrayList {
 
     private void doubleCapacity() {
         Integer[] largerList = new Integer[list.length * 2];
-        System.arraycopy(list, 0, largerList, 0, list.length);
+        for (int i = 0; i < list.length; i++) largerList[i] = list[i];
         list = largerList;
     }
 
@@ -13,11 +13,13 @@ public class MyArrayList {
         return size;
     }
 
+    // O(1)
     public void add(Integer value) {
         if (size == list.length) doubleCapacity();
         list[size++] = value;
     }
 
+    // O(n)
     public void add(int index, Integer value) throws IndexOutOfBoundsException {
         if (index > size) throw new IndexOutOfBoundsException();
         if (size == list.length) doubleCapacity();
@@ -26,12 +28,14 @@ public class MyArrayList {
         list[index] = value;
     }
 
+    // O(n)
     public void delete(int index) throws IndexOutOfBoundsException {
         if (index >= size) throw new IndexOutOfBoundsException();
         for (int i = index; i < size - 1; i++) list[i] = list[i + 1];
         size--;
     }
 
+    // O(1)
     public Integer get(int index) throws IndexOutOfBoundsException {
         if (index >= size) throw new IndexOutOfBoundsException();
         return list[index];
