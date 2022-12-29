@@ -1,9 +1,9 @@
 public class Main {
     public static void main(String[] args) {
-        int[] myArray = {10, 23, 409, 1, 45, 23, 2342, 4564, 7657, 1231, 1, 4, 35, 543};
+        int[] myArray = {95, 45, 0, -4, 24, 59};
         for (int i = 0; i < myArray.length; i++) System.out.print(myArray[i] + " ");
         System.out.println();
-        MyBubbleSort.sort(myArray);
+        MyMergeSort.sort(myArray);
         for (int i = 0; i < myArray.length; i++) System.out.print(myArray[i] + " ");
     }
 }
