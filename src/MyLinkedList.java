@@ -130,15 +130,4 @@ public class MyLinkedList {
         }
         return traverseElement.getValue();
     }
-
-    @Override
-    public String toString() {
-        String result = "";
-        ListElement element = firstElement;
-        for (long i = 0; i < size; i++) {
-            result = result + " " + element.getValue();
-            element = element.getNextElement();
-        }
-        return "[" + result + " ]";
-    }
 }

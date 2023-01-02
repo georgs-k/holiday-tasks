@@ -10,14 +10,15 @@ public class MyBinaryTree {
         return nextSmallestValue;
     }
 
-    private Integer addToArray(Integer nextIndex, int[] array) {
+    private int addToArray(int nextIndex, int[] array) {
         if (value == null) return nextIndex;
         if (leftChild != null) nextIndex = leftChild.addToArray(nextIndex, array);
         array[nextIndex++] = value;
         if (rightChild != null) nextIndex = rightChild.addToArray(nextIndex, array);
         return nextIndex;
     }
-    private Integer count(Integer number) {
+
+    private int count(int number) {
         if (value == null) return number;
         if (leftChild != null) number = leftChild.count(number);
         number++;

@@ -1,10 +1,10 @@
 public class MyArrayList {
 
     private int size;
-    private Integer[] list = new Integer[4];
+    private int[] list = new int[4];
 
     private void doubleCapacity() {
-        Integer[] largerList = new Integer[list.length * 2];
+        int[] largerList = new int[list.length * 2];
         for (int i = 0; i < list.length; i++) largerList[i] = list[i];
         list = largerList;
     }
@@ -14,13 +14,13 @@ public class MyArrayList {
     }
 
     // O(1)
-    public void add(Integer value) {
+    public void add(int value) {
         if (size == list.length) doubleCapacity();
         list[size++] = value;
     }
 
     // O(n)
-    public void add(int index, Integer value) throws IndexOutOfBoundsException {
+    public void add(int index, int value) throws IndexOutOfBoundsException {
         if (index > size) throw new IndexOutOfBoundsException();
         if (size == list.length) doubleCapacity();
         for (int i = size - 1; i >= index; i--) list[i + 1] = list[i];
@@ -36,7 +36,7 @@ public class MyArrayList {
     }
 
     // O(1)
-    public Integer get(int index) throws IndexOutOfBoundsException {
+    public int get(int index) throws IndexOutOfBoundsException {
         if (index >= size) throw new IndexOutOfBoundsException();
         return list[index];
     }
